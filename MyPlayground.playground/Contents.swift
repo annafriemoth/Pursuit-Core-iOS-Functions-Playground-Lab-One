@@ -1,12 +1,12 @@
 import UIKit
 
-// Question One
+// x Question One
 
 // Write a function named double(_:) that takes in a Double and returns that number times two
 
 // Your function here
 
-func double(double x: Int) -> Int{
+func double(double x: Double) -> Double{
     let result = x * 2
     return result
 }
@@ -25,7 +25,7 @@ let testCasesOne: [(Double, Double)] = [
 
 
 
-// Question Two
+// x Question Two
 
 // Write a function named smallest(of:and:) that takes in two Doubles and returns the smaller number
 
@@ -51,16 +51,19 @@ let testCasesTwo: [(Double, Double, Double)] = [
 //    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
 //}
 
-// Question Three
+// x Question Three
 
 // Write a function named smallestValue(in:) that takes in an array of Doubles and returns the smallest Double
 
 // Your function here
 
-func smallestValue(_ a: [Double], _ b: [Double], _ c: [Double]) -> Double {
-    if a < b {
-    }
+func smallestValue(_ array: [Double]) -> Double {
+    let theSmallestValue = array.sorted()[0]
+    return theSmallestValue
 }
+
+let resultOfSmallestValue = smallestValue([5, 12, 16, 5])
+print(resultOfSmallestValue)
 
 let testCasesThree: [([Double], Double)] = [
     (input: [1.0,2,3,4,5,5], expectedOutput: 1.0),
@@ -75,11 +78,16 @@ let testCasesThree: [([Double], Double)] = [
 //}
 
 
-// Question Four
+// ??? QUESTION FOUR
 
 // Write a function named occurrances(of:in:) that counts how many characters in a String match a specific character.
 
 // Your function here
+
+func occurrances(x char: String) -> Int {
+    let numberOfCharacters = char.count
+    return numberOfCharacters
+}
 
 let testCasesFour: [(Character, String, Int)] = [
     (inputOne: "l", inputTwo: "hello", expectedOutput: 2),
@@ -94,12 +102,15 @@ let testCasesFour: [(Character, String, Int)] = [
 //}
 
 
-// Question Five
+// ??? Question Five
 
 // Write a function called removeNils(from:) that takes an array of optional Ints and returns an array with them unwrapped with any nil values removed.
 
 // Your function here
-
+func removeNils(input: (Int?)) -> () {
+    let nilValuesRemoved = input ?? 5
+}
+    
 let testCasesFive: [([Int?], [Int])] = [
     (input: [1, nil, 9, nil, 10, nil], expectedOutput: [1,9,10]),
     (input: [1, 2, 3], expectedOutput: [1,2,3]),
@@ -107,8 +118,8 @@ let testCasesFive: [([Int?], [Int])] = [
     (input: [], expectedOutput: []),
 ]
 
-//for (input, expectedOutput) in testCasesFive {
-//    let output = removeNils(from: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesFive {
+    let output = removeNils(from: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
