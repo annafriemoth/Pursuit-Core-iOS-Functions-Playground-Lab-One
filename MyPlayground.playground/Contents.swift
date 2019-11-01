@@ -78,15 +78,19 @@ let testCasesThree: [([Double], Double)] = [
 //}
 
 
-// ??? QUESTION FOUR
+// x QUESTION FOUR
 
 // Write a function named occurrances(of:in:) that counts how many characters in a String match a specific character.
 
 // Your function here
 
-func occurrances(x char: String) -> Int {
-    let numberOfCharacters = char.count
-    return numberOfCharacters
+func occurrances(of char: Character, in string: String) -> Int {
+    
+    let occurancesOfChar = string.filter { $0 == char }
+    let number = occurancesOfChar.count
+
+    return number
+    
 }
 
 let testCasesFour: [(Character, String, Int)] = [
@@ -96,19 +100,28 @@ let testCasesFour: [(Character, String, Int)] = [
     (inputOne: "E", inputTwo: "cApItAlS aRe DiFfErEnT", expectedOutput: 2),
 ]
 
-//for (inputOne, inputTwo, expectedOutput) in testCasesFour {
-//    let output = occurrances(of: inputOne, in: inputTwo)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
-//}
+for (inputOne, inputTwo, expectedOutput) in testCasesFour {
+    let output = occurrances(of: inputOne, in: inputTwo)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
+}
 
 
-// ??? Question Five
+//  Question Five
 
 // Write a function called removeNils(from:) that takes an array of optional Ints and returns an array with them unwrapped with any nil values removed.
 
 // Your function here
-func removeNils(input: (Int?)) -> () {
-    let nilValuesRemoved = input ?? 5
+func removeNils(from input: (Int?)) -> () {
+    
+    // unwrapping array of optional ints
+    var arrayUnwrapped = input!
+    if
+    
+        arrayUnwrapped.filter({ $0 == nil })
+    array.map({ $0! })
+
+    return array
+    
 }
     
 let testCasesFive: [([Int?], [Int])] = [
